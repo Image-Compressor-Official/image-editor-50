@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Image Editor with 50+ Tools - Edit Photos Like a Pro">
+    <meta name="keywords" content="image editor, photo editing, 50 tools, free online editor">
+    <meta name="author" content="Your Name">
+    <title>Pro Image Editor 50</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="toolbar">
+            <!-- Core Tools -->
+            <button title="Brush" onclick="setTool('brush')">🖌️</button>
+            <button title="Eraser" onclick="setTool('eraser')">🧹</button>
+            <button title="Crop" onclick="cropImage()">✂️</button>
+            <button title="Rotate" onclick="rotateImage()">↻</button>
+            <button title="Flip" onclick="flipImage()">⇆</button>
+            <button title="Text" onclick="addText()">🔤</button>
+            <button title="Rectangle" onclick="addShape('rect')">🟥</button>
+            <button title="Circle" onclick="addShape('circle')">⚪</button>
+            <button title="Blur" onclick="applyFilter('blur')">🌫️</button>
+            <button title="Sharpen" onclick="applyFilter('sharpen')">🔪</button>
+            <!-- Additional Tools (up to 50) -->
+            <button title="Grayscale" onclick="applyFilter('grayscale')">⚫</button>
+            <button title="Invert" onclick="applyFilter('invert')">🔄</button>
+            <button title="Sepia" onclick="applyFilter('sepia')">📜</button>
+            <button title="Clone" onclick="setTool('clone')">🖱️</button>
+            <button title="Heal" onclick="setTool('heal')">✨</button>
+            <button title="Smudge" onclick="setTool('smudge')">🖐️</button>
+            <button title="Dodge" onclick="setTool('dodge')">🌞</button>
+            <button title="Burn" onclick="setTool('burn')">🌑</button>
+            <button title="Sponge" onclick="setTool('sponge')">🧽</button>
+            <button title="Perspective" onclick="perspectiveTransform()">📐</button>
+            <button title="Resize" onclick="resizeImage()">📏</button>
+            <button title="Undo" onclick="undo()">↺</button>
+            <button title="Redo" onclick="redo()">↻</button>
+            <button title="Download" onclick="downloadImage()">💾</button>
+            <button title="Theme" onclick="toggleTheme()">🌗</button>
+            <!-- Placeholder Tools (Aap yahan aur tools add kar sakte hain) -->
+            <button title="Brightness" onclick="adjustBrightness()">☀️</button>
+            <button title="Contrast" onclick="adjustContrast()">🌗</button>
+            <button title="Saturation" onclick="adjustSaturation()">🎨</button>
+            <button title="Hue" onclick="adjustHue()">🔮</button>
+            <button title="Noise" onclick="addNoise()">📺</button>
+            <button title="Posterize" onclick="posterize()">🖼️</button>
+            <button title="Emboss" onclick="emboss()">🗿</button>
+            <button title="Edge Detect" onclick="edgeDetect()">🔍</button>
+            <button title="Oil Paint" onclick="oilPaint()">🖌️</button>
+            <button title="Solarize" onclick="solarize()">🌞</button>
+            <button title="Vignette" onclick="vignette()">🌑</button>
+            <button title="Pixelate" onclick="pixelate()">🟥</button>
+            <button title="Distort" onclick="distort()">🌀</button>
+            <button title="Warp" onclick="warp()">🌊</button>
+            <button title="Zoom" onclick="zoom()">🔎</button>
+            <button title="Pan" onclick="pan()">🤚</button>
+            <button title="Color Picker" onclick="colorPicker()">🎨</button>
+            <button title="Magic Wand" onclick="magicWand()">🪄</button>
+            <button title="Lasso" onclick="lasso()">➰</button>
+            <button title="Move" onclick="move()">🚚</button>
+            <button title="Fill" onclick="fill()">🪣</button>
+            <button title="Gradient" onclick="gradient()">🌈</button>
+            <button title="Pattern" onclick="pattern()">🔳</button>
+            <button title="Stamp" onclick="stamp()">🖍️</button>
+        </div>
+        <div id="sidebar">
+            <input type="file" id="imageInput" accept="image/*" onchange="loadImage(event)">
+            <div id="controls">
+                <label>Brightness</label><input type="range" id="brightness" min="-100" max="100" value="0" oninput="applyFilter()">
+                <label>Contrast</label><input type="range" id="contrast" min="-100" max="100" value="0" oninput="applyFilter()">
+                <label>Opacity</label><input type="range" id="opacity" min="0" max="1" step="0.1" value="1" oninput="updateLayer()">
+            </div>
+            <div id="layers"></div>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
